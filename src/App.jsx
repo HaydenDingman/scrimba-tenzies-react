@@ -1,12 +1,25 @@
 import { useState } from 'react'
 import './App.css'
+import Die from './components/Die'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <main></main>
+      <main>
+        <section className="dice-container">
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+          <Die value="1" />
+        </section>
+      </main>
     </>
   )
 }

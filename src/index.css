@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
 body, html {
@@ -24,4 +25,31 @@ main {
     border-radius: 10px;
     max-height: 600px;
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2em;
+}
+
+.die {
+  box-shadow: 0px 2px 2px 0px #00000026;
+  border-radius: 3.81px;
+  width: 3em;
+  height: 3em;
+  max-height: 80px;
+  max-width: 80px;
+  background-color: #fff;
+  border: none;
+  font-family: "Karla", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  cursor: pointer;
 }
