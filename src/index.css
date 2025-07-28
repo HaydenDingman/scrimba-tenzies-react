@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 body {
     margin: 0;
     background-color: #0B2434;
@@ -10,11 +16,12 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1.25em 2em;
+    height: 100vh;
 }
 
 main {
     background-color: #F5F5F5;
-    width: 80vh;
-    height: 80vh;
     border-radius: 10px;
+    max-height: 600px;
+    max-width: 600px;
 }
