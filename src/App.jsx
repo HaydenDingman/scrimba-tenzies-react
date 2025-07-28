@@ -10,21 +10,18 @@ function App() {
             .map(() => Math.ceil(Math.random() * 6))
     }
 
+    const [dice, setDice] = useState(generateAllNewDice);
+    console.log(dice)
+    const diceElements = dice.map((val) => {
+        return <Die value={val} />
+    })
+
   return (
 
     <>
       <main>
         <section className="dice-container">
-          <Die value="1" />
-          <Die value="1" />
-          <Die value="1" />
-          <Die value="1" />
-          <Die value="1" />
-          <Die value="1" />
-          <Die value="1" />
-          <Die value="1" />
-          <Die value="1" />
-          <Die value="1" />
+          {diceElements}
         </section>
       </main>
     </>
