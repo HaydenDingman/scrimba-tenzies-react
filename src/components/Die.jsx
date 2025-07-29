@@ -1,5 +1,5 @@
-export default function Die({value, isHeld}) {
+export default function Die({value, isHeld, onClick}) {
     return (
-        <button className={`die ${isHeld ? "isHeld" : null}`}>{value}</button>
+        <button onClick={onClick} className={`die ${isHeld ? "isHeld" : null}`}>{value}</button>
     )
 }
