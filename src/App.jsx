@@ -19,7 +19,7 @@ function App() {
     const [dice, setDice] = useState(generateAllNewDice());
 
     const diceElements = dice.map((die) => {
-        return <Die value={die.value} isHeld={die.isHeld} />
+        return <Die key={die.id} value={die.value} isHeld={die.isHeld} />
     })
 
     function rollDice() {
