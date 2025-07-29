@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import {nanoid} from "nanoid"
 import Die from './components/Die'
 
 function App() {
@@ -7,14 +8,23 @@ function App() {
     function generateAllNewDice() {
         return new Array(10)
             .fill(0)
-            .map(() => Math.ceil(Math.random() * 6))
+            .map(() => {
+              return {value: Math.ceil(Math.random() * 6),
+                      isHeld: false,
+                      id: nanoid(),
+              }
+            })
     }
 
-    const [dice, setDice] = useState(generateAllNewDice);
-    console.log(dice)
-    const diceElements = dice.map((val) => {
-        return <Die value={val} />
+    const [dice, setDice] = useState(generateAllNewDice());
+
+    const diceElements = dice.map((die) => {
+        return <Die value={die.value} isHeld={die.isHeld} />
     })
+
+    function rollDice() {
+        setDice(generateAllNewDice)
+    }
 
   return (
 
@@ -23,6 +33,9 @@ function App() {
         <section className="dice-container">
           {diceElements}
         </section>
+
+        <button className="roll-dice" onClick={rollDice}>Roll Dice</button>
+
       </main>
     </>
   )

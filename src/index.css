@@ -53,3 +53,27 @@ main {
   font-weight: 700;
   cursor: pointer;
 }
+
+.roll-dice {
+  margin-top: 2em;
+  background-color: #5035FF;
+  box-shadow: 0px 3.2px 7.68px 0px #0000002E;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1em 2em;
+}
+
+.roll-dice:hover,
+.roll-dice:focus {
+    background-color: #6049f9;
+}
+
+.roll-dice:active {
+    background-color: #31209f;
+}
+
+.isHeld {
+  background-color: green;
+}
