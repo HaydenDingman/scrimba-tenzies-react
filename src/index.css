@@ -28,7 +28,20 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.title {
+    font-size: 40px;
+    margin: 0;
+}
+
+.instructions {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-top: 0;
+    text-align: center;
+    width: 80%;
 }
 
 .dice-container {
@@ -55,7 +68,7 @@ main {
 }
 
 .roll-dice {
-  margin-top: 2em;
+  margin-top: 1em;
   background-color: #5035FF;
   box-shadow: 0px 3.2px 7.68px 0px #0000002E;
   border-radius: 10px;
@@ -77,3 +90,4 @@ main {
 .isHeld {
   background-color: #59E391;
 }
+
