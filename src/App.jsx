@@ -17,7 +17,15 @@ function App() {
     }
 
     function hold(id) {
-        console.log(id);
+      setDice(prevDice => {
+          return prevDice.map(die => {
+              if (id === die.id){
+                  return {...die, isHeld: !die.isHeld}
+              } else {
+                return die
+              }
+          })
+      })
     }
 
     const [dice, setDice] = useState(generateAllNewDice());
@@ -27,7 +35,9 @@ function App() {
     })
 
     function rollDice() {
-        setDice(generateAllNewDice)
+        setDice(prevDice => prevDice.map(die => 
+        die.isHeld ?
+            die : {...die, value: Math.ceil(Math.random() * 6)}))
     }
 
   return (
