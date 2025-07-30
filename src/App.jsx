@@ -39,9 +39,13 @@ function App() {
     })
 
     function rollDice() {
+      if (gameWon) {
+        setDice(generateAllNewDice())
+      } else {
         setDice(prevDice => prevDice.map(die => 
         die.isHeld ?
             die : {...die, value: Math.ceil(Math.random() * 6)}))
+        }
     }
 
   return (
