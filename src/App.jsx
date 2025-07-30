@@ -17,7 +17,7 @@ function App() {
             })
     }
 
-    const [dice, setDice] = useState(generateAllNewDice());
+    const [dice, setDice] = useState(() => generateAllNewDice());
 
     // CODE FOR TRACKING WHETHER GAME IS WON
     const gameWon = dice.every(die => die.isHeld && (die.value === dice[0].value))
