@@ -16,14 +16,10 @@ function App() {
             })
     }
 
+    const [dice, setDice] = useState(generateAllNewDice());
+
     // CODE FOR TRACKING WHETHER GAME IS WON
-    let gameWon = false;
-    if (
-        dice.every(die => die.isHeld) && 
-        dice.every(die => die.value === dice[0].value)
-    ) {
-        gameWon = true;
-    }
+    const gameWon = dice.every(die => die.isHeld && (die.value === dice[0].value))
 
     function hold(id) {
       setDice(prevDice => {
@@ -36,8 +32,6 @@ function App() {
           })
       })
     }
-
-    const [dice, setDice] = useState(generateAllNewDice());
 
     const diceElements = dice.map((die) => {
         return <Die key={die.id} value={die.value} isHeld={die.isHeld} onClick={() => (hold(die.id))} />
