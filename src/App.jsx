@@ -16,6 +16,15 @@ function App() {
             })
     }
 
+    // CODE FOR TRACKING WHETHER GAME IS WON
+    let gameWon = false;
+    if (
+        dice.every(die => die.isHeld) && 
+        dice.every(die => die.value === dice[0].value)
+    ) {
+        gameWon = true;
+    }
+
     function hold(id) {
       setDice(prevDice => {
           return prevDice.map(die => {
@@ -50,7 +59,7 @@ function App() {
           {diceElements}
         </section>
 
-        <button className="roll-dice" onClick={rollDice}>Roll Dice</button>
+        <button className="roll-dice" onClick={rollDice}>{gameWon ? "New Game" : "Roll"}</button>
 
       </main>
     </>
