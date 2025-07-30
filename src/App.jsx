@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import {nanoid} from "nanoid"
+import Confetti from "react-confetti"
 import Die from './components/Die'
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
 
     <>
       <main>
+        {gameWon ? <Confetti /> : null}
         <h1 className="title">Tenzies</h1>
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
         <section className="dice-container">
